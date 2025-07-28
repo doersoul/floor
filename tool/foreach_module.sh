@@ -11,7 +11,6 @@ fi
 
 # All Flutter module folders
 folders=(
-  example
   floor
   floor_annotation
   floor_common
