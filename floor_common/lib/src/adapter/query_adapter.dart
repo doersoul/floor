@@ -1,9 +1,8 @@
 import 'dart:async';
 
-import 'package:sqflite_sqlcipher/sqlite_api.dart';
 import 'package:collection/collection.dart';
 import 'package:floor_common/src/util/string_utils.dart';
-
+import 'package:sqflite_sqlcipher/sqlite_api.dart';
 import 'package:sqlparser/sqlparser.dart';
 
 import '../util/constants.dart';

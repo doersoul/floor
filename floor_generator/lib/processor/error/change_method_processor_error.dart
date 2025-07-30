@@ -1,4 +1,3 @@
-import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/element2.dart';
 import 'package:floor_annotation/floor_annotation.dart' as annotations
     show OnConflictStrategy;
