@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:collection/collection.dart';
 import 'package:floor_annotation/floor_annotation.dart' as annotations;
@@ -18,12 +18,12 @@ import 'package:floor_generator/value_object/type_converter.dart';
 class QueryMethodProcessor extends Processor<QueryMethod> {
   final QueryMethodProcessorError _processorError;
 
-  final MethodElement _methodElement;
+  final MethodElement2 _methodElement;
   final List<Queryable> _queryables;
   final Set<TypeConverter> _typeConverters;
 
   QueryMethodProcessor(
-    final MethodElement methodElement,
+    final MethodElement2 methodElement,
     final List<Queryable> queryables,
     final Set<TypeConverter> typeConverters,
   )   : _methodElement = methodElement,
@@ -34,7 +34,7 @@ class QueryMethodProcessor extends Processor<QueryMethod> {
   @override
   QueryMethod process() {
     final name = _methodElement.displayName;
-    final parameters = _methodElement.parameters;
+    final parameters = _methodElement.formalParameters;
     final rawReturnType = _methodElement.returnType;
 
     final query = QueryProcessor(_methodElement, _getQuery()).process();
@@ -105,14 +105,14 @@ class QueryMethodProcessor extends Processor<QueryMethod> {
   ) {
     final type = returnsStream
         ? _methodElement.returnType.flatten()
-        : _methodElement.library.typeSystem.flatten(rawReturnType);
+        : _methodElement.library2.typeSystem.flatten(rawReturnType);
     return returnsList ? type.flatten() : type;
   }
 
   bool _getReturnsList(final DartType returnType, final bool returnsStream) {
     final type = returnsStream
         ? returnType.flatten()
-        : _methodElement.library.typeSystem.flatten(returnType);
+        : _methodElement.library2.typeSystem.flatten(returnType);
 
     return type.isDartCoreList;
   }

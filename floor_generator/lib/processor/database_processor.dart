@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:floor_annotation/floor_annotation.dart' as annotations;
 import 'package:floor_generator/misc/constants.dart';
 import 'package:floor_generator/misc/extension/iterable_extension.dart';
@@ -20,9 +20,9 @@ import 'package:floor_generator/value_object/view.dart';
 class DatabaseProcessor extends Processor<Database> {
   final DatabaseProcessorError _processorError;
 
-  final ClassElement _classElement;
+  final ClassElement2 _classElement;
 
-  DatabaseProcessor(final ClassElement classElement)
+  DatabaseProcessor(final ClassElement2 classElement)
       : _classElement = classElement,
         _processorError = DatabaseProcessorError(classElement);
 
@@ -75,8 +75,8 @@ class DatabaseProcessor extends Processor<Database> {
     final List<View> views,
     final Set<TypeConverter> typeConverters,
   ) {
-    return _classElement.fields.where(_isDao).map((field) {
-      final classElement = field.type.element as ClassElement;
+    return _classElement.fields2.where(_isDao).map((field) {
+      final classElement = field.type.element3 as ClassElement2;
       final name = field.displayName;
 
       final dao = DaoProcessor(
@@ -92,26 +92,26 @@ class DatabaseProcessor extends Processor<Database> {
     }).toList();
   }
 
-  bool _isDao(final FieldElement fieldElement) {
-    final element = fieldElement.type.element;
-    return element is ClassElement ? _isDaoClass(element) : false;
+  bool _isDao(final FieldElement2 fieldElement) {
+    final element = fieldElement.type.element3;
+    return element is ClassElement2 ? _isDaoClass(element) : false;
   }
 
-  bool _isDaoClass(final ClassElement classElement) {
+  bool _isDaoClass(final ClassElement2 classElement) {
     return classElement.hasAnnotation(annotations.dao.runtimeType) &&
         classElement.isAbstract;
   }
 
   List<Entity> _getEntities(
-    final ClassElement databaseClassElement,
+    final ClassElement2 databaseClassElement,
     final Set<TypeConverter> typeConverters,
   ) {
     final entities = _classElement
         .getAnnotation(annotations.Database)
         ?.getField(AnnotationField.databaseEntities)
         ?.toListValue()
-        ?.mapNotNull((object) => object.toTypeValue()?.element)
-        .whereType<ClassElement>()
+        ?.mapNotNull((object) => object.toTypeValue()?.element3)
+        .whereType<ClassElement2>()
         .where(_isEntity)
         .map((classElement) => EntityProcessor(
               classElement,
@@ -127,15 +127,15 @@ class DatabaseProcessor extends Processor<Database> {
   }
 
   List<View> _getViews(
-    final ClassElement databaseClassElement,
+    final ClassElement2 databaseClassElement,
     final Set<TypeConverter> typeConverters,
   ) {
     return _classElement
             .getAnnotation(annotations.Database)
             ?.getField(AnnotationField.databaseViews)
             ?.toListValue()
-            ?.mapNotNull((object) => object.toTypeValue()?.element)
-            .whereType<ClassElement>()
+            ?.mapNotNull((object) => object.toTypeValue()?.element3)
+            .whereType<ClassElement2>()
             .where(_isView)
             .map((classElement) => ViewProcessor(
                   classElement,
@@ -169,12 +169,12 @@ class DatabaseProcessor extends Processor<Database> {
         fieldTypeConverters;
   }
 
-  bool _isEntity(final ClassElement classElement) {
+  bool _isEntity(final ClassElement2 classElement) {
     return classElement.hasAnnotation(annotations.Entity) &&
         !classElement.isAbstract;
   }
 
-  bool _isView(final ClassElement classElement) {
+  bool _isView(final ClassElement2 classElement) {
     return classElement.hasAnnotation(annotations.DatabaseView) &&
         !classElement.isAbstract;
   }

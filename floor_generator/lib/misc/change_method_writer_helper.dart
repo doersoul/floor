@@ -1,3 +1,4 @@
+import 'package:analyzer/dart/element/element.dart';
 import 'package:code_builder/code_builder.dart';
 import 'package:floor_generator/misc/annotation_expression.dart';
 import 'package:floor_generator/value_object/change_method.dart';
@@ -27,7 +28,7 @@ class ChangeMethodWriterHelper {
     final parameter = _changeMethod.parameterElement;
 
     return Parameter((builder) => builder
-      ..name = parameter.name
+      ..name = parameter.displayName
       ..type = refer(parameter.type.getDisplayString(withNullability: false)));
   }
 }

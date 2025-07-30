@@ -1,8 +1,8 @@
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:source_gen/source_gen.dart';
 
 class TransactionMethodProcessorError {
-  final MethodElement _methodElement;
+  final MethodElement2 _methodElement;
 
   TransactionMethodProcessorError(this._methodElement);
 
