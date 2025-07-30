@@ -34,7 +34,7 @@ packages:
     source: hosted
     version: "1.4.0"
   collection:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: collection
       sha256: "2f5709ae4d3d59dd8f7cd309b4e023046b57d8a6c82130785d2b0e5868084e76"
@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "2.1.4"
   floor_annotation:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../floor_annotation"
       relative: true
@@ -101,7 +101,7 @@ packages:
     source: hosted
     version: "0.11.1"
   meta:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: meta
       sha256: e3641ec5d63ebf0d9b41bd43201a66e3fc79a65db5f61fc181f04cd27aab950c
@@ -109,7 +109,7 @@ packages:
     source: hosted
     version: "1.16.0"
   path:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: path
       sha256: "75cca69d1490965be98c73ceaea117e8a04dd21217b37b292c9ddbec0d955bc5"
@@ -178,7 +178,7 @@ packages:
     source: hosted
     version: "1.0.1+1"
   sqflite_sqlcipher:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: sqflite_sqlcipher
       sha256: edf10c7dc18e6bc4e9213c265d26856d303f0b0537174151d28c936b80f80bd0
@@ -194,7 +194,7 @@ packages:
     source: hosted
     version: "2.8.0"
   sqlparser:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: sqlparser
       sha256: "7c859c803cf7e9a84d6db918bac824545045692bbe94a6386bd3a45132235d09"

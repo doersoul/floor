@@ -12,7 +12,5 @@ environment:
 dependencies:
   floor_annotation:
     path: ../floor_annotation/
-  meta:
-  path: ^1.9.1
   sqflite_sqlcipher: ^3.2.1
   sqlparser: ^0.41.1
