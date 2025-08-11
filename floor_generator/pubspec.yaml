@@ -15,5 +15,5 @@ dependencies:
   analyzer: ^7.7.1
   floor_annotation:
     path: ../floor_annotation
-  source_gen: ^3.0.0
+  source_gen: ^3.1.0
   strings: ^4.0.1
