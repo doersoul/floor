@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:floor_generator/misc/change_method_processor_helper.dart';
 import 'package:floor_generator/processor/error/change_method_processor_error.dart';
@@ -7,12 +7,12 @@ import 'package:floor_generator/value_object/deletion_method.dart';
 import 'package:floor_generator/value_object/entity.dart';
 
 class DeletionMethodProcessor implements Processor<DeletionMethod> {
-  final MethodElement2 _methodElement;
+  final MethodElement _methodElement;
   final ChangeMethodProcessorHelper _helper;
   final ChangeMethodProcessorError _errors;
 
   DeletionMethodProcessor(
-    final MethodElement2 methodElement,
+    final MethodElement methodElement,
     final List<Entity> entities, [
     final ChangeMethodProcessorHelper? changeMethodProcessorHelper,
   ])  : _methodElement = methodElement,
@@ -53,7 +53,7 @@ class DeletionMethodProcessor implements Processor<DeletionMethod> {
   }
 
   DartType _getFlattenedReturnType(final DartType returnType) {
-    return _methodElement.library2.typeSystem.flatten(returnType);
+    return _methodElement.library.typeSystem.flatten(returnType);
   }
 
   void _assertMethodReturnsNoList(final DartType flattenedReturnType) {

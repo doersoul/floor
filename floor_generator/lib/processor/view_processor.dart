@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:floor_annotation/floor_annotation.dart' as annotations;
 import 'package:floor_generator/misc/constants.dart';
 import 'package:floor_generator/misc/type_utils.dart';
@@ -11,7 +11,7 @@ class ViewProcessor extends QueryableProcessor<View> {
   final ViewProcessorError _processorError;
 
   ViewProcessor(
-    final ClassElement2 classElement,
+    final ClassElement classElement,
     final Set<TypeConverter> typeConverters,
   )   : _processorError = ViewProcessorError(classElement),
         super(classElement, typeConverters);

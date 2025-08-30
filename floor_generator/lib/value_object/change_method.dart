@@ -1,10 +1,10 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:floor_generator/value_object/entity.dart';
 
 /// Base class for change methods (insert, update, delete).
 class ChangeMethod {
-  final MethodElement2 methodElement;
+  final MethodElement methodElement;
   final String name;
   final DartType returnType;
   final DartType flattenedReturnType;

@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:floor_annotation/floor_annotation.dart' as annotations;
 import 'package:floor_generator/misc/constants.dart';
@@ -12,11 +12,11 @@ import 'package:floor_generator/value_object/type_converter.dart';
 import 'package:source_gen/source_gen.dart';
 
 class FieldProcessor extends Processor<Field> {
-  final FieldElement2 _fieldElement;
+  final FieldElement _fieldElement;
   final TypeConverter? _typeConverter;
 
   FieldProcessor(
-    final FieldElement2 fieldElement,
+    final FieldElement fieldElement,
     final TypeConverter? typeConverter,
   )   : _fieldElement = fieldElement,
         _typeConverter = typeConverter;

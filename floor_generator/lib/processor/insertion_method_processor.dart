@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:floor_annotation/floor_annotation.dart' as annotations
     show Insert;
@@ -12,12 +12,12 @@ import 'package:floor_generator/value_object/entity.dart';
 import 'package:floor_generator/value_object/insertion_method.dart';
 
 class InsertionMethodProcessor implements Processor<InsertionMethod> {
-  final MethodElement2 _methodElement;
+  final MethodElement _methodElement;
   final ChangeMethodProcessorHelper _helper;
   final ChangeMethodProcessorError _errors;
 
   InsertionMethodProcessor(
-    final MethodElement2 methodElement,
+    final MethodElement methodElement,
     final List<Entity> entities, [
     final ChangeMethodProcessorHelper? changeMethodProcessorHelper,
   ])  : _methodElement = methodElement,
@@ -63,7 +63,7 @@ class InsertionMethodProcessor implements Processor<InsertionMethod> {
   }
 
   bool _getReturnsList(final DartType returnType) {
-    final type = _methodElement.library2.typeSystem.flatten(returnType);
+    final type = _methodElement.library.typeSystem.flatten(returnType);
     return type.isDartCoreList;
   }
 
@@ -71,7 +71,7 @@ class InsertionMethodProcessor implements Processor<InsertionMethod> {
     final DartType returnType,
     final bool returnsList,
   ) {
-    final type = _methodElement.library2.typeSystem.flatten(returnType);
+    final type = _methodElement.library.typeSystem.flatten(returnType);
     return returnsList ? type.flatten() : type;
   }
 

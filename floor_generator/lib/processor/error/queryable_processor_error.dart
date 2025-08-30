@@ -1,10 +1,10 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:source_gen/source_gen.dart';
 
 class QueryableProcessorError {
-  final ClassElement2 _classElement;
+  final ClassElement _classElement;
 
-  QueryableProcessorError(final ClassElement2 classElement)
+  QueryableProcessorError(final ClassElement classElement)
       : _classElement = classElement;
 
   InvalidGenerationSourceError get prohibitedMixinUsage {

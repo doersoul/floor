@@ -1,10 +1,10 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:floor_generator/processor/error/processor_error.dart';
 
 class QueryProcessorError {
-  final MethodElement2 _methodElement;
+  final MethodElement _methodElement;
 
-  QueryProcessorError(final MethodElement2 methodElement)
+  QueryProcessorError(final MethodElement methodElement)
       : _methodElement = methodElement;
 
   ProcessorError unusedQueryMethodParameter(

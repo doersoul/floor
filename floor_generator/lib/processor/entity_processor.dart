@@ -1,5 +1,5 @@
 import 'package:analyzer/dart/constant/value.dart';
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:floor_annotation/floor_annotation.dart' as annotations;
 import 'package:floor_generator/misc/constants.dart';
 import 'package:floor_generator/misc/extension/dart_object_extension.dart';
@@ -21,7 +21,7 @@ class EntityProcessor extends QueryableProcessor<Entity> {
   final EntityProcessorError _processorError;
 
   EntityProcessor(
-    final ClassElement2 classElement,
+    final ClassElement classElement,
     final Set<TypeConverter> typeConverters,
   )   : _processorError = EntityProcessorError(classElement),
         super(classElement, typeConverters);
@@ -70,8 +70,8 @@ class EntityProcessor extends QueryableProcessor<Entity> {
                   ?.toTypeValue() ??
               (throw _processorError.foreignKeyNoEntity);
 
-          final parentElement = parentType.element3;
-          final parentName = parentElement is ClassElement2
+          final parentElement = parentType.element;
+          final parentName = parentElement is ClassElement
               ? parentElement
                       .getAnnotation(annotations.Entity)
                       ?.getField(AnnotationField.entityTableName)

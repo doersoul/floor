@@ -222,7 +222,7 @@ class QueryMethodWriter implements Writer {
   String _generateDartCoreMapper(final DartType returnType) {
     final castedDatabaseValue = 'row.values.first'.cast(
       returnType,
-      returnType.element3,
+      returnType.element,
       withNullability: false,
     );
     return '(Map<String, Object?> row) => $castedDatabaseValue';
@@ -231,7 +231,7 @@ class QueryMethodWriter implements Writer {
   String _generateConverterMapper(final TypeConverter typeConverter) {
     final castedDatabaseValue = 'row.values.first'.cast(
       typeConverter.databaseType,
-      typeConverter.fieldType.element3,
+      typeConverter.fieldType.element,
     );
     return '(Map<String, Object?> row) => _${typeConverter.name.decapitalize()}.decode($castedDatabaseValue)';
   }

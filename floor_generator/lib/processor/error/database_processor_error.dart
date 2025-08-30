@@ -1,10 +1,10 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:source_gen/source_gen.dart';
 
 class DatabaseProcessorError {
-  final ClassElement2 _classElement;
+  final ClassElement _classElement;
 
-  DatabaseProcessorError(final ClassElement2 classElement)
+  DatabaseProcessorError(final ClassElement classElement)
       : _classElement = classElement;
 
   InvalidGenerationSourceError get versionIsMissing {

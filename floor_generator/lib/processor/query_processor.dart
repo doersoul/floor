@@ -1,4 +1,4 @@
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:floor_generator/misc/extension/dart_type_extension.dart';
 import 'package:floor_generator/processor/error/query_processor_error.dart';
 import 'package:floor_generator/processor/processor.dart';
@@ -11,7 +11,7 @@ class QueryProcessor extends Processor<Query> {
 
   final List<FormalParameterElement> _parameters;
 
-  QueryProcessor(MethodElement2 methodElement, this._query)
+  QueryProcessor(MethodElement methodElement, this._query)
       : _parameters = methodElement.formalParameters,
         _processorError = QueryProcessorError(methodElement);
 
