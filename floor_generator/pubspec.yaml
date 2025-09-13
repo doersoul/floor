@@ -13,7 +13,7 @@ environment:
 
 dependencies:
   analyzer: ^8.1.1
-  code_builder: ^4.10.1
+  code_builder: ^4.11.0
   floor_annotation:
     path: ../floor_annotation
   source_gen: ^4.0.1
