@@ -109,26 +109,26 @@ packages:
     dependency: transitive
     description:
       name: sqflite_sqlcipher
-      sha256: "81f690c8c250ecbcd981d5c7b98abbc2767a161ed2cdd5277b505cd4d95c681e"
+      sha256: ba7733c5514cf0ccb0331997b771a890f73678bcd84cdfb5f7487a88a71f1738
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.0"
+    version: "3.4.0"
   sqlite3:
     dependency: transitive
     description:
       name: sqlite3
-      sha256: dd806fff004a0aeb01e208b858dbc649bc72104670d425a81a6dd17698535f6e
+      sha256: f18fd9a72d7a1ad2920db61368f2a69368f1cc9b56b8233e9d83b47b0a8435aa
       url: "https://pub.dev"
     source: hosted
-    version: "2.8.0"
+    version: "2.9.3"
   sqlparser:
     dependency: transitive
     description:
       name: sqlparser
-      sha256: "7c859c803cf7e9a84d6db918bac824545045692bbe94a6386bd3a45132235d09"
+      sha256: "57090342af1ce32bb499aa641f4ecdd2d6231b9403cea537ac059e803cc20d67"
       url: "https://pub.dev"
     source: hosted
-    version: "0.41.1"
+    version: "0.41.2"
   synchronized:
     dependency: transitive
     description:
@@ -170,5 +170,5 @@ packages:
     source: hosted
     version: "1.1.1"
 sdks:
-  dart: ">=3.8.0 <4.0.0"
-  flutter: ">=3.27.0"
+  dart: ">=3.9.0 <4.0.0"
+  flutter: ">=3.35.0"
