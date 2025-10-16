@@ -12,7 +12,7 @@ environment:
   sdk: '>=3.2.6 <4.0.0'
 
 dependencies:
-  analyzer: ^8.3.0
+  analyzer: ^8.4.0
   code_builder: ^4.11.0
   floor_annotation:
     path: ../floor_annotation
