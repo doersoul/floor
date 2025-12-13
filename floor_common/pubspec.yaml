@@ -13,4 +13,4 @@ dependencies:
   floor_annotation:
     path: ../floor_annotation
   sqflite_sqlcipher: ^3.4.0
-  sqlparser: ^0.42.0
+  sqlparser: ^0.42.1

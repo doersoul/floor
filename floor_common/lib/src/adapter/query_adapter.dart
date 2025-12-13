@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
+import 'package:floor_common/src/util/constants.dart';
 import 'package:floor_common/src/util/string_utils.dart';
 import 'package:sqflite_sqlcipher/sqlite_api.dart';
 import 'package:sqlparser/sqlparser.dart';
-
-import '../util/constants.dart';
 
 /// This class knows how to execute database queries.
 class QueryAdapter {
