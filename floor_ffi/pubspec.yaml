@@ -12,4 +12,4 @@ environment:
 dependencies:
   floor_common:
     path: ../floor_common/
-  sqflite_common_ffi: ^2.3.6
+  sqflite_common_ffi: ^2.4.0+1
