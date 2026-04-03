@@ -12,9 +12,9 @@ environment:
   sdk: '>=3.2.6 <4.0.0'
 
 dependencies:
-  analyzer: ^8.4.1
+  analyzer: ^12.0.0
   code_builder: ^4.11.0
   floor_annotation:
     path: ../floor_annotation
-  source_gen: ^4.2.0
+  source_gen: ^4.2.2
   strings: ^4.0.1
