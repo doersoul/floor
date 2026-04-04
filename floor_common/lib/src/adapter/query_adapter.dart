@@ -172,5 +172,6 @@ class QueryAdapter {
       ];
 
   /// Parses a root node to validate SQL
-  AstNode _parseRootNode(String sql) => _sqlEngine.parse(sql).rootNode;
+  AstNode _parseRootNode(String sql) =>
+      _sqlEngine.parse(ParserEntrypoint.statement, sql).rootNode;
 }

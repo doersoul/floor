@@ -122,6 +122,9 @@ abstract class QueryableProcessor<T extends Queryable> extends Processor<T> {
 extension on FieldElement {
   bool shouldBeIncluded() {
     final isIgnored = hasAnnotation(annotations.ignore.runtimeType);
-    return !(isStatic || isSynthetic || isIgnored);
+
+    final isReal = (nonSynthetic == this);
+
+    return isReal && !isStatic && !isIgnored;
   }
 }
